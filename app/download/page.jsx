@@ -1,5 +1,19 @@
 "use client";
 import useDownloader from "react-use-downloader";
+import axios from "axios";
+
+const BASE_URL = "http://13.250.6.126/api/greeting";
+
+function callApi() {
+  axios
+    .get(BASE_URL)
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+}
 
 const Download = () => {
   const { download } = useDownloader();
@@ -9,9 +23,10 @@ const Download = () => {
   return (
     <div>
       <h3>Workmanagement App</h3>
-      <button onClick={() => download(fileUrl, fileName)}>
-        workmanagement_app_v_6_2_2023
-      </button>
+      {/* <button onClick={() => download(fileUrl, fileName)}>
+        Click to download app
+      </button> */}
+      <button onClick={callApi}>Click</button>
     </div>
   );
 };
