@@ -1,6 +1,5 @@
 "use client";
 import useDownloader from "react-use-downloader";
-import axios from "axios";
 
 const ListItem = () => (
   <li onClick={download(fileUrl, fileName)}>{fileName}</li>
@@ -9,15 +8,18 @@ const ListItem = () => (
 const Download = () => {
   const { download } = useDownloader();
   const items = [
-    { fileUrl: "files/apks/v1/app-debug.apk", fileName: "app-v1.apk" },
-    { fileUrl: "files/apks/v2/app-debug.apk", fileName: "app-v2.apk" },
+    { fileUrl: "files/apks/v3/app-debug.apk", fileName: "app-v3.apk" },
+    { fileUrl: "files/apks/v3/app-debug.apk", fileName: "app-v3.apk" },
     { fileUrl: "files/apks/v3/app-debug.apk", fileName: "app-v3.apk" },
   ];
 
   return (
-    <div>
-      <h3>Choose the version:</h3>
-      <ul>
+    <div className="flex flex-col justify-items-center text-center items-center">
+      <p className=" text-red-600 mt-2">
+        Note: you can only download the app when you open the website in your
+        browser
+      </p>
+      {/* <ul>
         {items.map((item, i) => (
           <li
             key={i}
@@ -29,7 +31,15 @@ const Download = () => {
             {item.fileName}
           </li>
         ))}
-      </ul>
+      </ul> */}
+      <button
+        className="black_btn mt-5"
+        onClick={() => {
+          download(items[2].fileUrl, items[2].fileName);
+        }}
+      >
+        Download lastest version
+      </button>
     </div>
   );
 };

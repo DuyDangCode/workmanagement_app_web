@@ -35,6 +35,10 @@
   filter: invert(1);
 }
 
+.black_btn {
+  @apply rounded-full border border-black bg-black py-1.5 px-5 text-white transition-all hover:bg-white hover:text-black text-center text-sm font-light flex items-center justify-center;
+}
+
 
 .gradient {
   height: fit-content;

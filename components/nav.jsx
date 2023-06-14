@@ -24,7 +24,7 @@ const Nav = () => {
           alt="WA"
           className="object-contain"
         ></Image>
-        <p className="max-sm:hidden font-sans font-semibold text-lg text-black tracking-wide;">
+        <p className="max-sm:hidden font-sans font-bold text-lg text-white tracking-wide;">
           WK app
         </p>
       </Link>
